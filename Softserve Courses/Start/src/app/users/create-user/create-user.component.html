@@ -1,0 +1,46 @@
+<div class="container">
+<button (click)="myModal.open()" class="btn btn-primary">Add User</button>
+  <modal #myModal [closeOnEscape]="true">
+  <modal-header>
+    <h1>Create New User</h1>
+  </modal-header>
+  <modal-content>
+    <form #f="ngForm"
+        (ngSubmit)="addUser()">
+  
+      <div class="form-group">
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" placeholder="Firstname"
+        class="form-control"
+        [(ngModel)]="newUser.FirstName" name="name">
+      </div>
+    
+      <div class="form-group">
+        <label for="surnameInput">Surname:</label>
+        <input type="text" id="surnameInput" placeholder="Lastname"
+        class="form-control"
+        [(ngModel)]="newUser.LastName" name="surname">
+      </div>
+    
+      <div class="form-group">
+        <label for="emailInput">Email:</label>
+        <input type="text" id="emailInput" placeholder="some@mail.example"
+        class="form-control"
+        [(ngModel)]="newUser.Email" name="email">
+      </div>
+    
+      <div class="form-group">
+        <label for="ageInput">Age:</label>
+        <input type="text" id="ageInput" placeholder="0"
+        class="form-control"
+        [(ngModel)]="newUser.Age" name="age">
+      </div>
+    
+      <div class="field">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+  
+  </modal-content>
+  </modal>
+</div>
